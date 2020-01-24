@@ -1,26 +1,2 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<form>
-     <div>
-       <label>Title</label>
-       <input type="text" [(ngModel)]="post_form.title" id="title" required name="title">
-     </div>
-     <div>
-       <label>Code</label>
-       <input type="text" [(ngModel)]="post_form.code" id="code" required name="code">
-     </div>
-     <button type="button" (click) = "postData()">Добавить</button>
-</form>
-
-
-<div class='code'>
-  <ng-container *ngFor="let item of data.code">
-   <hr/>
-    <h3>{{ item.title }}</h3>
-    <h3>{{ item.timedate }}</h3>
-    <h3>{{ item.id }}</h3>
-    <p>{{ item.code }}</p>
-    <button type="button" (click) = "deleteData(item.id)">Удалить</button>
-  </ng-container>
-</div>
-

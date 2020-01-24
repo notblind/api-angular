@@ -1,0 +1,36 @@
+<div class='code'>
+  <form>
+       <div>
+         <p>{{ error }}</p>
+         <label>Название</label>
+         <input type="text" type="text" (input)="inTitle($event)">
+       </div>
+       <div>
+         <label>Код</label>
+         <input type="text" (input)="inCode($event)">
+       </div>
+       <button type="button" (click) = "postF()">Добавить</button>
+  </form>
+
+
+  <ng-container *ngFor="let item of data.code">
+   <hr/>
+    <h3>Название: {{ item.title }}</h3>
+    <h3>Дата: {{ item.timedate | date }}</h3>
+    <p>Код: {{ item.code }}</p>
+    <h3>Редактировать</h3>
+    <form>
+       <div>
+         <label>Название</label>
+         <input type="text" (input)="inTitle($event)">
+       </div>
+       <div>
+         <label>Код</label>
+         <input type="text" (input)="inCode($event)">
+       </div>
+       <button type="button" (click) = "putF(item.id)">Редактировать</button>
+    </form>
+    <button type="button" (click) = "deleteF(item.id)">Удалить</button>
+  </ng-container>
+</div>
+

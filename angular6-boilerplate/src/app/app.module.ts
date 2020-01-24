@@ -1,20 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ApiServiceService } from './api-service.service';
+import { ApiComponentComponent } from './api-component/api-component.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ApiComponentComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [AppComponent],
-  bootstrap: [AppComponent]
+  providers: [
+    ApiServiceService,
+    AppComponent
+  ],
+  bootstrap: [
+    AppComponent,
+    ApiComponentComponent
+  ]
 })
 export class AppModule { }
